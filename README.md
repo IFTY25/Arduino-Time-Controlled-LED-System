@@ -1,176 +1,260 @@
-🕌 Arduino-Based Time Controlled LED System with RTC, LCD, and Buzzer
-📘 Overview
+<h1 align="center">🕌 Arduino-Based Time Controlled LED System</h1>
+<p align="center">
+⏱️ <b>Automated LED and Buzzer Control for Prayer Time Management</b><br>
+Built with Arduino Uno, DS3231 RTC, LCD, EEPROM & Push Buttons
+</p>
+
+---
+
+## 📘 Overview  
+This project introduces an **Arduino-based time-controlled LED and buzzer system** that helps users avoid *Makruh times* — specific periods during which prayers are discouraged in Islamic practice.  
+The system automatically tracks time using a **DS3231 RTC**, displays status on an **LCD**, and triggers visual (LED) and audible (buzzer) alerts.  
+
+Developed as part of the **EEE 3210 – Microprocessor, Interfacing, and System Design Lab** at  
+**Ahsanullah University of Science and Technology (AUST)**.  
+
+---
+
+## ✨ Key Highlights  
+✅ Real-time tracking using DS3231 RTC  
+✅ LCD interface for displaying live clock & status  
+✅ EEPROM memory to retain data after power-off  
+✅ Push buttons for user configuration  
+✅ Red/Green LEDs + buzzer for instant feedback  
+✅ Manual override via Serial Monitor  
+
+---
+
+<details>
+<summary><b>⚙️ Hardware Components</b></summary>
+
+| Component | Quantity | Description |
+|------------|-----------|-------------|
+| Arduino Uno | 1 | Microcontroller board |
+| DS3231 RTC Module | 1 | High-accuracy real-time clock |
+| LCD 16x2 (I2C) | 1 | Displays time & LED status |
+| Red LED | 1 | Indicates restricted (Makruh) time |
+| Green LED | 1 | Indicates prayer-allowed time |
+| 220Ω Resistors | 2 | Limits current for LEDs |
+| Piezo Buzzer | 1 | Audio alert during restriction |
+| Push Buttons | 4 | Set start/end times |
+| Breadboard & Jumper Wires | 1 set | For connections |
+</details>
+
+---
+
+<details>
+<summary><b>🔧 Working Principle</b></summary>
+
+1. **RTC** tracks the real-time clock continuously.  
+2. **LCD** displays the current time and prayer status.  
+3. **Push buttons** allow users to set restricted (Makruh) hours.  
+4. **EEPROM** stores user data even after power loss.  
+5. When current time matches Makruh range:  
+   - 🔴 Red LED ON  
+   - 🔔 Buzzer activated  
+   - LCD shows “Restricted Time”  
+6. Otherwise:  
+   - 🟢 Green LED ON  
+   - Buzzer OFF  
+   - LCD shows “Prayer Allowed”  
+</details>
+
+---
+
+<details>
+<summary><b>🧠 Technical Details</b></summary>
+
+- **RTC (DS3231):** Temperature-compensated, high precision, battery-backed clock  
+- **EEPROM:** Stores Makruh times persistently  
+- **LCD (I2C):** Reduces wiring complexity  
+- **Microcontroller Logic:** Compares current vs. restricted times in real time  
+</details>
+
+---
+
+## 🧩 Design Trade-offs  
+
+| Aspect | Consideration |
+|--------|----------------|
+| ⏱️ Accuracy vs. Power | RTC provides precision while conserving power |
+| 💸 Cost vs. Performance | Arduino Uno chosen for affordability and reliability |
+| 🧍 User Simplicity vs. Complexity | Button interface keeps it beginner-friendly |
+
+---
+
+## 🧪 Implementation & Validation  
+
+- ✅ RTC and LCD synchronization verified  
+- ✅ LED & buzzer tested for correct response  
+- ✅ Button input and override confirmed functional  
+- ✅ EEPROM successfully retained settings post power cycle  
+
+---
+
+<details>
+<summary><b>📊 Multidisciplinary Integration</b></summary>
+
+| Field | Application |
+|--------|-------------|
+| **Electronics** | RTC, EEPROM, LED, buzzer integration |
+| **Software** | Time logic, storage, and I/O handling |
+| **System Design** | Reliability, low power, usability |
+</details>
+
+---
+
+## 🌱 Ethical & Sustainable Design  
+- Supports religious practices with inclusivity and neutrality.  
+- Designed for ease of use and accessibility.  
+- Low power consumption supports sustainability.  
+
+---
+
+## 🧭 Project Development  
+
+**Phases:**  
+1. 🔹 Component selection & circuit design  
+2. 🔹 Software development & debugging  
+3. 🔹 Integration & validation  
+4. 🔹 Documentation & presentation  
+
+**Tools Used:**  
+- Arduino IDE  
+- Proteus Simulation  
+- Libraries: `Wire.h`, `RTClib.h`, `EEPROM.h`
+
+---
+
+## 🖥️ Circuit Diagram  
+<h1 align="center">🕌 Arduino-Based Time Controlled LED System</h1>
+<p align="center">
+⏱️ <b>Automated LED and Buzzer Control for Prayer Time Management</b><br>
+Built with Arduino Uno, DS3231 RTC, LCD, EEPROM & Push Buttons
+</p>
+
+---
+
+## 📘 Overview  
+This project introduces an **Arduino-based time-controlled LED and buzzer system** that helps users avoid *Makruh times* — specific periods during which prayers are discouraged in Islamic practice.  
+The system automatically tracks time using a **DS3231 RTC**, displays status on an **LCD**, and triggers visual (LED) and audible (buzzer) alerts.  
+
+Developed as part of the **EEE 3210 – Microprocessor, Interfacing, and System Design Lab** at  
+**Ahsanullah University of Science and Technology (AUST)**.  
+
+---
+
+## ✨ Key Highlights  
+✅ Real-time tracking using DS3231 RTC  
+✅ LCD interface for displaying live clock & status  
+✅ EEPROM memory to retain data after power-off  
+✅ Push buttons for user configuration  
+✅ Red/Green LEDs + buzzer for instant feedback  
+✅ Manual override via Serial Monitor  
+
+---
+
+<details>
+<summary><b>⚙️ Hardware Components</b></summary>
+
+| Component | Quantity | Description |
+|------------|-----------|-------------|
+| Arduino Uno | 1 | Microcontroller board |
+| DS3231 RTC Module | 1 | High-accuracy real-time clock |
+| LCD 16x2 (I2C) | 1 | Displays time & LED status |
+| Red LED | 1 | Indicates restricted (Makruh) time |
+| Green LED | 1 | Indicates prayer-allowed time |
+| 220Ω Resistors | 2 | Limits current for LEDs |
+| Piezo Buzzer | 1 | Audio alert during restriction |
+| Push Buttons | 4 | Set start/end times |
+| Breadboard & Jumper Wires | 1 set | For connections |
+</details>
 
-This project presents an Arduino-based microcontroller system designed to assist users in tracking specific periods known as Makruh times—times during which prayers should be avoided according to Islamic practice. Since these periods vary daily, the system automatically monitors time using an RTC module (DS3231) and provides visual (LED) and audible (buzzer) alerts, along with real-time feedback on an LCD display.
+---
 
-This work was completed as part of the EEE 3210 – Microprocessor, Interfacing, and System Design Lab course at Ahsanullah University of Science and Technology (AUST).
+<details>
+<summary><b>🔧 Working Principle</b></summary>
 
-🧩 Key Features
+1. **RTC** tracks the real-time clock continuously.  
+2. **LCD** displays the current time and prayer status.  
+3. **Push buttons** allow users to set restricted (Makruh) hours.  
+4. **EEPROM** stores user data even after power loss.  
+5. When current time matches Makruh range:  
+   - 🔴 Red LED ON  
+   - 🔔 Buzzer activated  
+   - LCD shows “Restricted Time”  
+6. Otherwise:  
+   - 🟢 Green LED ON  
+   - Buzzer OFF  
+   - LCD shows “Prayer Allowed”  
+</details>
 
-Real-Time Tracking — Uses DS3231 RTC for accurate timekeeping.
+---
 
-User Configuration — Four push buttons allow easy setting of Makruh start and end times.
+<details>
+<summary><b>🧠 Technical Details</b></summary>
 
-Memory Retention — EEPROM stores set times to retain data after power loss.
+- **RTC (DS3231):** Temperature-compensated, high precision, battery-backed clock  
+- **EEPROM:** Stores Makruh times persistently  
+- **LCD (I2C):** Reduces wiring complexity  
+- **Microcontroller Logic:** Compares current vs. restricted times in real time  
+</details>
 
-Visual & Audible Indicators — Red LED and buzzer activate during restricted times.
+---
 
-LCD Display — Displays real-time clock data and current prayer status.
+## 🧩 Design Trade-offs  
 
-Manual Override — Users can reset or adjust time using the serial monitor or buttons.
+| Aspect | Consideration |
+|--------|----------------|
+| ⏱️ Accuracy vs. Power | RTC provides precision while conserving power |
+| 💸 Cost vs. Performance | Arduino Uno chosen for affordability and reliability |
+| 🧍 User Simplicity vs. Complexity | Button interface keeps it beginner-friendly |
 
-⚙️ Hardware Components
-Component	Quantity	Description
-Arduino Uno	1	Microcontroller board
-DS3231 RTC Module	1	Real-time clock module for accurate timekeeping
-16x2 LCD (I2C)	1	Displays real-time clock and LED status
-Red LED	1	Indicates restricted (Makruh) time
-Green LED	1	Indicates prayer-allowed time
-220Ω Resistors	2	Current limiting for LEDs
-Piezo Buzzer	1	Provides an alert signal
-Push Buttons	4	Used to set start/end times
-Breadboard & Jumper Wires	1 set	For circuit connections
-🔧 Working Principle
+---
 
-The DS3231 RTC module continuously tracks the current time.
+## 🧪 Implementation & Validation  
 
-The LCD displays live clock readings.
+- ✅ RTC and LCD synchronization verified  
+- ✅ LED & buzzer tested for correct response  
+- ✅ Button input and override confirmed functional  
+- ✅ EEPROM successfully retained settings post power cycle  
 
-Users configure the restricted prayer periods using push buttons.
+---
 
-The system stores the start and end times in EEPROM.
+<details>
+<summary><b>📊 Multidisciplinary Integration</b></summary>
 
-During Makruh time:
+| Field | Application |
+|--------|-------------|
+| **Electronics** | RTC, EEPROM, LED, buzzer integration |
+| **Software** | Time logic, storage, and I/O handling |
+| **System Design** | Reliability, low power, usability |
+</details>
 
-The red LED lights up.
+---
 
-The buzzer activates.
+## 🌱 Ethical & Sustainable Design  
+- Supports religious practices with inclusivity and neutrality.  
+- Designed for ease of use and accessibility.  
+- Low power consumption supports sustainability.  
 
-The LCD shows "Restricted Time".
+---
 
-Outside the restricted period:
+## 🧭 Project Development  
 
-The green LED lights up.
+**Phases:**  
+1. 🔹 Component selection & circuit design  
+2. 🔹 Software development & debugging  
+3. 🔹 Integration & validation  
+4. 🔹 Documentation & presentation  
 
-The buzzer remains off.
+**Tools Used:**  
+- Arduino IDE  
+- Proteus Simulation  
+- Libraries: `Wire.h`, `RTClib.h`, `EEPROM.h`
 
-The LCD shows "Prayer Allowed".
+---
 
-Settings persist across reboots due to EEPROM storage.
+## 🖥️ Circuit Diagram  
 
-🧠 Engineering Depth
 
-Real-Time Clock (DS3231): Provides high-accuracy timekeeping with temperature compensation and battery backup.
-
-EEPROM Storage: Retains user-set Makruh times even after power loss.
-
-LCD with I2C Interface: Simplifies wiring and reduces the number of Arduino pins used.
-
-Hardware-Software Integration: Combines digital electronics, programming logic, and real-time event handling.
-
-💡 System Design Trade-offs
-Design Aspect	Trade-off Consideration
-Accuracy vs. Power	RTC ensures precision while maintaining low power usage.
-Cost vs. Functionality	Arduino Uno offers affordability with moderate performance.
-Usability vs. Complexity	Simple push-button interface enhances accessibility.
-🧾 Implementation & Validation
-
-✅ Hardware Testing: Confirmed RTC and LCD synchronization.
-
-✅ LED & Buzzer: Verified correct activation according to set time ranges.
-
-✅ Button Functionality: Proper response and time adjustments validated.
-
-✅ EEPROM Testing: Confirmed data retention after power cycle.
-
-📊 Multidisciplinary Integration
-Field	Application
-Electronics	RTC, EEPROM, LED, and buzzer interfacing
-Software	Time checking, data storage, button input
-System Design	Power efficiency and human-centered usability
-🌱 Ethical & Sustainable Design
-
-Promotes spiritual discipline through technology without bias.
-
-Encourages accessibility and ease of use for all users.
-
-Energy-efficient design to minimize environmental impact.
-
-🧭 Project Management
-
-Phases:
-
-Component selection and circuit design
-
-Software development and debugging
-
-System integration and testing
-
-Final documentation and presentation
-
-Tools Used:
-
-Arduino IDE
-
-Proteus Simulation
-
-EEPROM library
-
-DS3231 RTC library
-
-🖥️ Circuit Diagram
-
-Include your circuit image here (recommended file name: circuit_diagram.png):
-
-![Circuit Diagram](circuit/circuit_diagram.png)
-
-🧰 How to Run the Project
-
-Clone the repository:
-
-git clone https://github.com/IFTY25/Arduino-Time-Controlled-LED-System.git
-
-
-Open the code in Arduino IDE.
-
-Install required libraries (Wire.h, RTClib.h, EEPROM.h).
-
-Connect the hardware components as shown in the circuit diagram.
-
-Upload the code to your Arduino board.
-
-Set Makruh times using push buttons or the serial monitor.
-
-👨‍💻 Contributors
-
-Farzana Ferdouse
-
-Md. Atiqul Islam Shuvo
-
-Md. Iftykhar Rahman Ifty
-
-Md. Khalid-Uz-Zaman
-
-Sayed Sajidur Rahman
-
-Abu Nayeem
-
-
-
-🚀 Future Enhancements
-
-Integration with a mobile app or IoT platform for remote configuration.
-
-Addition of solar-based power system for sustainable use.
-
-Implementation of automatic daily Makruh time updates via internet synchronization.
-
-🏫 Academic Relevance
-
-This project demonstrates the ability to:
-
-Design an embedded system with real-time control logic.
-
-Integrate hardware and software subsystems effectively.
-
-Apply principles of system optimization and ethical engineering.
