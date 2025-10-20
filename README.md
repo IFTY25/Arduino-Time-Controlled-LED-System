@@ -267,6 +267,6 @@ Developed as part of the **EEE 3210 – Microprocessor, Interfacing, and System 
 
 1. Clone the repository  
    ```bash
-   git clone https://github.com/yourusername/Arduino-Time-Controlled-LED-System.git
+   git clone https://github.com/IFTY25/Arduino-Time-Controlled-LED-System.git
 
 
