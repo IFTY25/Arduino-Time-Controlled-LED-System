@@ -257,7 +257,7 @@ Developed as part of the **EEE 3210 – Microprocessor, Interfacing, and System 
 
 ## 🖥️ Circuit Diagram  
 <p align="center">
-  <img src="circuit/circuit_diagram.jpg" alt="Circuit Diagram" width="600">
+  <img src="circuit_diagram.jpg" alt="Circuit Diagram" width="600">
 </p>
 
 
