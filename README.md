@@ -256,5 +256,17 @@ Developed as part of the **EEE 3210 – Microprocessor, Interfacing, and System 
 ---
 
 ## 🖥️ Circuit Diagram  
+<p align="center">
+  <img src="circuit/circuit_diagram.png" alt="Circuit Diagram" width="600">
+</p>
+
+
+---
+
+## 🧰 How to Run  
+
+1. Clone the repository  
+   ```bash
+   git clone https://github.com/yourusername/Arduino-Time-Controlled-LED-System.git
 
 
